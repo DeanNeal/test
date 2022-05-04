@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <title>Document</title>
 </head>
 
 <body>
-    <iframe src="https://lendingcluster-vipoaoqa01.orpheusdev.net/#TEST_PAGE"></iframe>
+
+    <div class="test">
+        123
+    </div>
+    <iframe id="myIframe" src="https://lendingcluster-vipoaoqa01.orpheusdev.net/#TEST_PAGE"></iframe>
 </body>
 <style>
     * {
@@ -27,6 +31,27 @@
         border: none;
         height: 100vh;
     }
+    .test {
+        height: 300px;
+    }
 </style>
+
+
+<script>
+
+var ifrm = document.getElementById('myIframe');
+ifrm = ifrm.contentWindow || ifrm.contentDocument.document || ifrm.contentDocument;
+ifrm.document.open();
+// ifrm.document.write('Hello World!');
+// console.log(ifrm.document);
+// ifrm.document.close();
+
+
+ifrm.document.addEventListener('touchend', function (e) {
+        alert(1);
+        ifrm.document.activeElement.blur?.();
+    })
+
+</script>
 
 </html>
